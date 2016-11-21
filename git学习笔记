@@ -1,0 +1,92 @@
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+
+git init 初始化
+
+git add <file>
+git commit -m '备注'
+git commit -a -m '备注'   如果是第一添加一个文件必须通过git add <file>单独添加一次
+git commit -am '备注'
+
+git status 文件是否被修改过
+git diff 查看修改内容
+git diff HEAD -- <file>  命令可以查看工作区和版本库里面最新版本的区别
+
+git log 历史版本信息
+git log --pretty=oneline 单行显示
+
+git reset --hard head^      使用head回退一个版本号
+git reset --hard head^^     使用head回退两个版本号
+git reset --hard head~100   使用head回退100个版本号
+git reset --hard 78988977   使用head移动到某个commit id为 78988977的版本
+
+git reflog  查看命令历史，以便确定要回到未来的哪个版本
+
+
+git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+
+git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令
+
+git rm 删除一个文件
+
+git remote add origin git@github.com:zzg123123/learngit.git
+git push -u origin master
+git push origin master
+
+git clone git@github.com:zzg123123/gitskills.git
+
+git branch 查看分支
+
+git branch <name> 创建分支
+
+git checkout <name> 切换分支
+
+git checkout -b <name> 创建+切换分支
+
+git merge <name> 合并某分支到当前分支
+
+git branch -d <name> 删除分支
+git branch -D <name>强行删除
+
+git log --graph 分支合并图。
+git log --graph --pretty=oneline --abbrev-commit
+
+
+当切换分支的时候： 1. first文件被修改了 没有add,则切换分支成功。各个版本都是被修改的样子。
+				2. first文件被修改了 并且add了,则切换分支失败。
+				3. first文件被修改了 并且add了,且commit了,则切换分支成功。
+当需要另外改一个bug并且提交，则需要切到主分支去修改。由于当前分支的内容没有做完处于add状态这样才不会影响其他的分支，但是由于没有做完又不能commit,不能commit就无法切换分支。
+这个时候如果想要切换到主分支去修改bug就需要使用git stash保存当前分支的状态。
+
+
+git stash  保存当前分支的状态
+git stash apply 恢复 
+git stash drop 删除
+git stash pop 恢复+删除
+
+git remote
+git remote -v
+
+git checkout -b dev origin/dev 从远程的dev拉取代码
+
+git pull 拉取代码
+
+git branch --set-upstream dev origin/dev 设置dev和origin/dev的链接
+
+
+git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id
+git tag -a <tagname> -m "备注" 指定标签信息
+git tag -s <tagname> -m "备注" 用PGP签名标签
+git tag 查看所有标签
+git show v1.0
+git tag -d v0.1 删除本地标签
+git push origin v1.0 推送标签到远程
+git push origin --tags 推送所有标签到远程
+删除远程标签: 先从本地删除 git tag -d v0.1  然后删除远程 git push origin :refs/tags/v0.1
+
+
+git config --global alias.st status 起别名
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
