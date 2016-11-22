@@ -4,6 +4,10 @@ git config --global user.email "email@example.com"
 git init 初始化
 
 git add <file>
+git add -A  提交所有变化
+git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件(git2.x支持对删除文件的提交)
+
 git commit -m '备注'
 git commit -a -m '备注'   如果是第一添加一个文件必须通过git add <file>单独添加一次
 git commit -am '备注'
@@ -88,8 +92,8 @@ git push origin --tags 推送所有标签到远程
 删除远程标签: 先从本地删除 git tag -d v0.1  然后删除远程 git push origin :refs/tags/v0.1
 
 
-git config --global alias.st status 起别名
+git config --global alias.st status 给命令起别名
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-ssh-keygen -t rsa -C "youremail@example.com"
-ssh -T git@git.oschina.net
+ssh-keygen -t rsa -C "youremail@example.com" 生成本地的ssh证书的命令
+ssh -T git@git.oschina.net 测试远程库是否可以链接(远程库可以是github,oschina等)
