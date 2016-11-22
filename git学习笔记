@@ -90,3 +90,6 @@ git push origin --tags 推送所有标签到远程
 
 git config --global alias.st status 起别名
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+ssh-keygen -t rsa -C "youremail@example.com"
+ssh -T git@git.oschina.net
