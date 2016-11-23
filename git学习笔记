@@ -36,7 +36,9 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 
 git rm 删除一个文件
 
-git remote add origin git@github.com:zzg123123/learngit.git
+git remote add origin git@github.com:zhg123123/learngit.git
+重新设置remote方法：先git remote rm origin  然后重新add
+
 git push -u origin master
 git push origin master
 
