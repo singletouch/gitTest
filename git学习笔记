@@ -99,3 +99,5 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 ssh-keygen -t rsa -C "youremail@example.com" 生成本地的ssh证书的命令
 ssh -T git@git.oschina.net 测试远程库是否可以链接(远程库可以是github,oschina等)
+
+一个惨痛的事实告诉我们，没有add文件的时候千万不要reset ～～
