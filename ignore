@@ -1,1 +1,1 @@
-global ignore
+test global/local ignore true 
