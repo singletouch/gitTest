@@ -1,0 +1,1 @@
+test global/local ignore true //都没有设置的忽略的情况下 无论文件大小写，内容都提交到已经存在的文件中
