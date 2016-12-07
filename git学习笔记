@@ -104,3 +104,5 @@ ssh -T git@git.oschina.net 测试远程库是否可以链接(远程库可以是g
 
 运行git config core.ignorecase false，关闭git忽略大小写配置，即可检测到大小写名称更改
 当已经有a文件的情况下如果更改为A则在 忽略大小写文件的情况下会检测到文件的更改，如果此时提交了A文件到远程，远程a并不会消失，只有把本地的A删除在提交远程的a和A才会消失
+
+git config -l 查看配置信息
