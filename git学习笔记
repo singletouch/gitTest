@@ -106,3 +106,11 @@ ssh -T git@git.oschina.net 测试远程库是否可以链接(远程库可以是g
 当已经有a文件的情况下如果更改为A则在 忽略大小写文件的情况下会检测到文件的更改，如果此时提交了A文件到远程，远程a并不会消失，只有把本地的A删除在提交远程的a和A才会消失
 
 git config -l 查看配置信息
+
+
+
+
+我在Github新建一个仓库，写了License，然后把本地一个写了很久仓库上传。
+先pull，因为两个仓库不同，发现refusing to merge unrelated histories，无法pull
+因为他们是两个不同的项目，要把两个不同的项目合并，git需要添加一句代码，在git pull，这句代码是在git 2.9.2版本发生的，最新的版本需要添加--allow-unrelated-histories
+假如我们的源是origin，分支是master，那么我们 需要这样写git pull origin master --allow-unrelated-histories需要知道，我们的源可以是本地的路径
