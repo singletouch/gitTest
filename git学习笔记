@@ -69,6 +69,7 @@ git log --graph --pretty=oneline --abbrev-commit
 
 
 git stash  保存当前分支的状态
+git stash list 当前暂存的列表
 git stash apply 恢复 
 git stash drop 删除
 git stash pop 恢复+删除
